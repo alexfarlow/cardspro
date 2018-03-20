@@ -1,0 +1,25 @@
+{
+  "name": "farlow/cardspro",
+  "description": "CardsPro Api Service",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Farlow",
+      "email": "farlow@yandex.ru",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "farlow@yandex.ru",
+    "issues": "https://github.com/cweiske/jsonmapper/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "cardspro": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.5.0",
+    "netresearch/jsonmapper" : "1.4"
+  }
+}
