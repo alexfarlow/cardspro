@@ -1,4 +1,5 @@
-<pre><?php
+<?php
+
 /*
  *         $response = '{
   "errorMessages": [
@@ -26,20 +27,18 @@ use cardspro\common\models\PartnerInfo;
 use cardspro\common\models\CardActivateRequest;
 
 
-$PartnerInfo = new PartnerInfo(['partnerCode' => '123567']);
+$PartnerInfo = new PartnerInfo(['partnerCode' => '123']);
 $PartnerInfo
     ->setRequestId('aaa')
     ->setPartnerCode('bbbnmnm');
-//var_dump($PartnerInfo);die;
+
 
 $CardActivateRequest = new CardActivateRequest();
 
 
 $CardService = new CardService;
 $CardService
-    ->setSslCert(__DIR__."/../test-partner.p12")
-    ->setSslCertPass('6tiLVGF2ersG');
+    ->setSslCert("path_to_crt")
+    ->setSslCertPass('somepass');
 
 $r = $CardService->activate($PartnerInfo, $CardActivateRequest);
-
-var_dump($r);
