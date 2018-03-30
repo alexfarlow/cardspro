@@ -5,6 +5,7 @@ namespace cardspro\services\user;
 use cardspro\common\models\PartnerInfo;
 use cardspro\common\models\RestorePasswordRequest;
 use cardspro\common\models\UpdateUserInfoRequest;
+use cardspro\services\BaseService;
 
 class UserService extends BaseService
 {

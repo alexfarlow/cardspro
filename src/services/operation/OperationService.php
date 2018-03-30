@@ -7,6 +7,7 @@ use cardspro\common\models\ExpandedOperationsRequest;
 use cardspro\common\models\OperationsRequest;
 use cardspro\common\models\PartnerInfo;
 use cardspro\common\models\RefundRequest;
+use cardspro\services\BaseService;
 
 class OperationService extends BaseService
 {
