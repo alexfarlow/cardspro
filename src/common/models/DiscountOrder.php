@@ -16,28 +16,28 @@ class DiscountOrder
      *
      * @var integer
      */
-    public $discountAmount;
+    private $discountAmount;
 
     /**
      * Информация о товарах и распределении скидок между ними
      *
      * @var DiscountGoods[]
      */
-    public $discountGoods;
+    private $discountGoods;
 
     /**
      * Номер чека
      *
      * @var string
      */
-    public $number;
+    private $number;
 
     /**
      * Дата/время чека
      *
      * @var string
      */
-    public $orderDate;
+    private $orderDate;
 
     /**
      * @return string
@@ -71,4 +71,51 @@ class DiscountOrder
         return $this->discountAmount;
     }
 
+    /**
+     * @param int $discountAmount
+     *
+     * @return DiscountOrder
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        $this->discountAmount = $discountAmount;
+
+        return $this;
+    }
+
+    /**
+     * @param DiscountGoods[] $discountGoods
+     *
+     * @return DiscountOrder
+     */
+    public function setDiscountGoods($discountGoods)
+    {
+        $this->discountGoods = $discountGoods;
+
+        return $this;
+    }
+
+    /**
+     * @param string $number
+     *
+     * @return DiscountOrder
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * @param string $orderDate
+     *
+     * @return DiscountOrder
+     */
+    public function setOrderDate($orderDate)
+    {
+        $this->orderDate = $orderDate;
+
+        return $this;
+    }
 }

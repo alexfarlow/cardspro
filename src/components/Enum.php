@@ -47,6 +47,7 @@ abstract class Enum implements JsonSerializable
 
     /**
      * @return array
+     * @throws \ReflectionException
      */
     public static function getValues()
     {
@@ -62,7 +63,9 @@ abstract class Enum implements JsonSerializable
 
     /**
      * @param array $arr
+     *
      * @return bool
+     * @throws \ReflectionException
      */
     public static function check(array $arr)
     {

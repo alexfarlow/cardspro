@@ -56,6 +56,7 @@ abstract class BaseService
      * @param $path
      * @param $params
      *
+     * @return object
      * @throws ApiCurlException
      */
     protected function call($method, $path, $params)

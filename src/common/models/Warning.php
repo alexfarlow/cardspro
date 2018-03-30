@@ -9,7 +9,7 @@ class Warning
      *
      * @var string
      */
-    public $warningMessage;
+    private $warningMessage;
 
     /**
      * @return string

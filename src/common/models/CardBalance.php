@@ -11,7 +11,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $activatedAt;
+    private $activatedAt;
     
     
     /**
@@ -19,7 +19,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $expireDate;
+    private $expireDate;
     
     
     /**
@@ -27,7 +27,7 @@ class CardBalance extends Model
      *
      * @var CardDesign
      */
-    public $design;
+    private $design;
     
     
     /**
@@ -35,7 +35,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    public $earnedAmount;
+    private $earnedAmount;
     
     
     /**
@@ -43,7 +43,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    public $holdPointsAmount;
+    private $holdPointsAmount;
     
     
     /**
@@ -51,7 +51,7 @@ class CardBalance extends Model
      *
      * @var boolean
      */
-    public $pinExists;
+    private $pinExists;
     
     
     /**
@@ -59,7 +59,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    public $pointsAmount;
+    private $pointsAmount;
     
     
     /**
@@ -67,7 +67,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    public $productId;
+    private $productId;
     
     
     /**
@@ -75,7 +75,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $productCode;
+    private $productCode;
     
     
     /**
@@ -83,7 +83,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $productName;
+    private $productName;
     
     
     /**
@@ -91,7 +91,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $productType;
+    private $productType;
     
     
     /**
@@ -99,7 +99,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $productDesignCode;
+    private $productDesignCode;
     
     
     /**
@@ -108,7 +108,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    public $purchaseCount;
+    private $purchaseCount;
     
     
     /**
@@ -116,7 +116,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    public $purchaseAmount;
+    private $purchaseAmount;
     
     
     /**
@@ -124,7 +124,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $status;
+    private $status;
     
     
     /**
@@ -132,7 +132,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $statusCode;
+    private $statusCode;
     
     
     /**
@@ -140,7 +140,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    public $topUpCount;
+    private $topUpCount;
     
     
     /**
@@ -148,7 +148,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $descriptionUrl;
+    private $descriptionUrl;
     
     
     /**
@@ -160,7 +160,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    public $kind;
+    private $kind;
     
     
     /**
@@ -168,7 +168,7 @@ class CardBalance extends Model
      *
      * @var LoyaltyLevelDto
      */
-    public $loyaltyLevel;
+    private $loyaltyLevel;
     
     
     /**
@@ -176,5 +176,426 @@ class CardBalance extends Model
      *
      * @var GiftDto[]
      */
-    public $gifts;
+    private $gifts;
+
+    /**
+     * @return string
+     */
+    public function getActivatedAt()
+    {
+        return $this->activatedAt;
+    }
+
+    /**
+     * @param string $activatedAt
+     *
+     * @return CardBalance
+     */
+    public function setActivatedAt($activatedAt)
+    {
+        $this->activatedAt = $activatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExpireDate()
+    {
+        return $this->expireDate;
+    }
+
+    /**
+     * @param string $expireDate
+     *
+     * @return CardBalance
+     */
+    public function setExpireDate($expireDate)
+    {
+        $this->expireDate = $expireDate;
+
+        return $this;
+    }
+
+    /**
+     * @return CardDesign
+     */
+    public function getDesign()
+    {
+        return $this->design;
+    }
+
+    /**
+     * @param CardDesign $design
+     *
+     * @return CardBalance
+     */
+    public function setDesign($design)
+    {
+        $this->design = $design;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getEarnedAmount()
+    {
+        return $this->earnedAmount;
+    }
+
+    /**
+     * @param int $earnedAmount
+     *
+     * @return CardBalance
+     */
+    public function setEarnedAmount($earnedAmount)
+    {
+        $this->earnedAmount = $earnedAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHoldPointsAmount()
+    {
+        return $this->holdPointsAmount;
+    }
+
+    /**
+     * @param int $holdPointsAmount
+     *
+     * @return CardBalance
+     */
+    public function setHoldPointsAmount($holdPointsAmount)
+    {
+        $this->holdPointsAmount = $holdPointsAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPinExists()
+    {
+        return $this->pinExists;
+    }
+
+    /**
+     * @param bool $pinExists
+     *
+     * @return CardBalance
+     */
+    public function setPinExists($pinExists)
+    {
+        $this->pinExists = $pinExists;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPointsAmount()
+    {
+        return $this->pointsAmount;
+    }
+
+    /**
+     * @param int $pointsAmount
+     *
+     * @return CardBalance
+     */
+    public function setPointsAmount($pointsAmount)
+    {
+        $this->pointsAmount = $pointsAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getProductId()
+    {
+        return $this->productId;
+    }
+
+    /**
+     * @param int $productId
+     *
+     * @return CardBalance
+     */
+    public function setProductId($productId)
+    {
+        $this->productId = $productId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductCode()
+    {
+        return $this->productCode;
+    }
+
+    /**
+     * @param string $productCode
+     *
+     * @return CardBalance
+     */
+    public function setProductCode($productCode)
+    {
+        $this->productCode = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductName()
+    {
+        return $this->productName;
+    }
+
+    /**
+     * @param string $productName
+     *
+     * @return CardBalance
+     */
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductType()
+    {
+        return $this->productType;
+    }
+
+    /**
+     * @param string $productType
+     *
+     * @return CardBalance
+     */
+    public function setProductType($productType)
+    {
+        $this->productType = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductDesignCode()
+    {
+        return $this->productDesignCode;
+    }
+
+    /**
+     * @param string $productDesignCode
+     *
+     * @return CardBalance
+     */
+    public function setProductDesignCode($productDesignCode)
+    {
+        $this->productDesignCode = $productDesignCode;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPurchaseCount()
+    {
+        return $this->purchaseCount;
+    }
+
+    /**
+     * @param int $purchaseCount
+     *
+     * @return CardBalance
+     */
+    public function setPurchaseCount($purchaseCount)
+    {
+        $this->purchaseCount = $purchaseCount;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPurchaseAmount()
+    {
+        return $this->purchaseAmount;
+    }
+
+    /**
+     * @param int $purchaseAmount
+     *
+     * @return CardBalance
+     */
+    public function setPurchaseAmount($purchaseAmount)
+    {
+        $this->purchaseAmount = $purchaseAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return CardBalance
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatusCode()
+    {
+        return $this->statusCode;
+    }
+
+    /**
+     * @param string $statusCode
+     *
+     * @return CardBalance
+     */
+    public function setStatusCode($statusCode)
+    {
+        $this->statusCode = $statusCode;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTopUpCount()
+    {
+        return $this->topUpCount;
+    }
+
+    /**
+     * @param int $topUpCount
+     *
+     * @return CardBalance
+     */
+    public function setTopUpCount($topUpCount)
+    {
+        $this->topUpCount = $topUpCount;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptionUrl()
+    {
+        return $this->descriptionUrl;
+    }
+
+    /**
+     * @param string $descriptionUrl
+     *
+     * @return CardBalance
+     */
+    public function setDescriptionUrl($descriptionUrl)
+    {
+        $this->descriptionUrl = $descriptionUrl;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKind()
+    {
+        return $this->kind;
+    }
+
+    /**
+     * @param string $kind
+     *
+     * @return CardBalance
+     */
+    public function setKind($kind)
+    {
+        $this->kind = $kind;
+
+        return $this;
+    }
+
+    /**
+     * @return LoyaltyLevelDto
+     */
+    public function getLoyaltyLevel()
+    {
+        return $this->loyaltyLevel;
+    }
+
+    /**
+     * @param LoyaltyLevelDto $loyaltyLevel
+     *
+     * @return CardBalance
+     */
+    public function setLoyaltyLevel($loyaltyLevel)
+    {
+        $this->loyaltyLevel = $loyaltyLevel;
+
+        return $this;
+    }
+
+    /**
+     * @return GiftDto[]
+     */
+    public function getGifts()
+    {
+        return $this->gifts;
+    }
+
+    /**
+     * @param GiftDto[] $gifts
+     *
+     * @return CardBalance
+     */
+    public function setGifts($gifts)
+    {
+        $this->gifts = $gifts;
+
+        return $this;
+    }
+
 }

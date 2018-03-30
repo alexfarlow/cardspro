@@ -16,7 +16,7 @@ class CardActivateRequest extends Model
      * 
      * @var CardIdentifier
      */
-    public $cardIdentifier;
+    private $cardIdentifier;
     
     
     /**
@@ -24,7 +24,7 @@ class CardActivateRequest extends Model
      * 
      * @var string
      */
-    public $productCode;
+    private $productCode;
     
     
     /**
@@ -32,7 +32,7 @@ class CardActivateRequest extends Model
      * 
      * @var integer
      */
-    public $identCode;
+    private $identCode;
     
 
     /**
@@ -40,7 +40,7 @@ class CardActivateRequest extends Model
      * 
      * @var UserForm
      */
-    public $user;
+    private $user;
      
     
     /**
@@ -48,7 +48,7 @@ class CardActivateRequest extends Model
      * 
      * @var integer
      */
-    public $price;
+    private $price;
      
     
     /**
@@ -60,7 +60,7 @@ class CardActivateRequest extends Model
      * 
      * @var boolean
      */
-    public $offline;
+    private $offline;
      
     
     /**
@@ -72,5 +72,145 @@ class CardActivateRequest extends Model
      * 
      * @var boolean
      */
-    public $accepted;
+    private $accepted;
+
+    /**
+     * @return CardIdentifier
+     */
+    public function getCardIdentifier()
+    {
+        return $this->cardIdentifier;
+    }
+
+    /**
+     * @param CardIdentifier $cardIdentifier
+     *
+     * @return CardActivateRequest
+     */
+    public function setCardIdentifier($cardIdentifier)
+    {
+        $this->cardIdentifier = $cardIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductCode()
+    {
+        return $this->productCode;
+    }
+
+    /**
+     * @param string $productCode
+     *
+     * @return CardActivateRequest
+     */
+    public function setProductCode($productCode)
+    {
+        $this->productCode = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdentCode()
+    {
+        return $this->identCode;
+    }
+
+    /**
+     * @param int $identCode
+     *
+     * @return CardActivateRequest
+     */
+    public function setIdentCode($identCode)
+    {
+        $this->identCode = $identCode;
+
+        return $this;
+    }
+
+    /**
+     * @return UserForm
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param UserForm $user
+     *
+     * @return CardActivateRequest
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param int $price
+     *
+     * @return CardActivateRequest
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isOffline()
+    {
+        return $this->offline;
+    }
+
+    /**
+     * @param bool $offline
+     *
+     * @return CardActivateRequest
+     */
+    public function setOffline($offline)
+    {
+        $this->offline = $offline;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAccepted()
+    {
+        return $this->accepted;
+    }
+
+    /**
+     * @param bool $accepted
+     *
+     * @return CardActivateRequest
+     */
+    public function setAccepted($accepted)
+    {
+        $this->accepted = $accepted;
+
+        return $this;
+    }
 }

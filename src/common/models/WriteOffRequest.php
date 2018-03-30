@@ -14,7 +14,7 @@ class WriteOffRequest extends Model
      * 
      * @var CardIdentifier
      */
-    public $cardIdentifier;
+    private $cardIdentifier;
 
     /**
      *  Сумма списания в баллах для карт с типом POINTS в единицах измерения (валюте), 
@@ -25,21 +25,21 @@ class WriteOffRequest extends Model
      * 
      * @var int
      */
-    public $bonusAmount;
+    private $bonusAmount;
 
     /**
      * Код продукта
      * 
      * @var string
      */
-    public $productCode;
+    private $productCode;
 
     /**
      * Информация о чеке 
      * 
      * @var PurchaseOrder
      */
-    public $order;
+    private $order;
 
     /**
      * Код идентификации
@@ -48,12 +48,132 @@ class WriteOffRequest extends Model
      * 
      * @var int
      */
-    public $identCode;	
+    private $identCode;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    public $additionalInfo;
+    private $additionalInfo;
+
+    /**
+     * @return CardIdentifier
+     */
+    public function getCardIdentifier()
+    {
+        return $this->cardIdentifier;
+    }
+
+    /**
+     * @param CardIdentifier $cardIdentifier
+     *
+     * @return WriteOffRequest
+     */
+    public function setCardIdentifier($cardIdentifier)
+    {
+        $this->cardIdentifier = $cardIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBonusAmount()
+    {
+        return $this->bonusAmount;
+    }
+
+    /**
+     * @param int $bonusAmount
+     *
+     * @return WriteOffRequest
+     */
+    public function setBonusAmount($bonusAmount)
+    {
+        $this->bonusAmount = $bonusAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductCode()
+    {
+        return $this->productCode;
+    }
+
+    /**
+     * @param string $productCode
+     *
+     * @return WriteOffRequest
+     */
+    public function setProductCode($productCode)
+    {
+        $this->productCode = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * @return PurchaseOrder
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * @param PurchaseOrder $order
+     *
+     * @return WriteOffRequest
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdentCode()
+    {
+        return $this->identCode;
+    }
+
+    /**
+     * @param int $identCode
+     *
+     * @return WriteOffRequest
+     */
+    public function setIdentCode($identCode)
+    {
+        $this->identCode = $identCode;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalInfo()
+    {
+        return $this->additionalInfo;
+    }
+
+    /**
+     * @param string $additionalInfo
+     *
+     * @return WriteOffRequest
+     */
+    public function setAdditionalInfo($additionalInfo)
+    {
+        $this->additionalInfo = $additionalInfo;
+
+        return $this;
+    }
 }

@@ -11,21 +11,21 @@ class CardTopUpRequest extends Model
      *
      * @var CardIdentifier
      */
-    public $cardIdentifier;
+    private $cardIdentifier;
 
     /**
      * Код продукта
      *
      * @var string
      */
-    public $productCode;
+    private $productCode;
 
     /**
      * Пополняемое количество проходов	Обязательно для счетов (продуктов) с типом PURCHASES
      *
      * @var integer
      */
-    public $purchaseCount;
+    private $purchaseCount;
 
     /**
      * Сумма пополнения в единицах измерения (валюте), указанных в параметре currency PartnerInfo.
@@ -33,12 +33,112 @@ class CardTopUpRequest extends Model
      *
      * @var integer
      */
-    public $sum;
+    private $sum;
 
     /**
      * Дополнительные парамеры
      *
      * @var string
      */
-    public $additionalInfo;
+    private $additionalInfo;
+
+    /**
+     * @return CardIdentifier
+     */
+    public function getCardIdentifier()
+    {
+        return $this->cardIdentifier;
+    }
+
+    /**
+     * @param CardIdentifier $cardIdentifier
+     *
+     * @return CardTopUpRequest
+     */
+    public function setCardIdentifier($cardIdentifier)
+    {
+        $this->cardIdentifier = $cardIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductCode()
+    {
+        return $this->productCode;
+    }
+
+    /**
+     * @param string $productCode
+     *
+     * @return CardTopUpRequest
+     */
+    public function setProductCode($productCode)
+    {
+        $this->productCode = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPurchaseCount()
+    {
+        return $this->purchaseCount;
+    }
+
+    /**
+     * @param int $purchaseCount
+     *
+     * @return CardTopUpRequest
+     */
+    public function setPurchaseCount($purchaseCount)
+    {
+        $this->purchaseCount = $purchaseCount;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSum()
+    {
+        return $this->sum;
+    }
+
+    /**
+     * @param int $sum
+     *
+     * @return CardTopUpRequest
+     */
+    public function setSum($sum)
+    {
+        $this->sum = $sum;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalInfo()
+    {
+        return $this->additionalInfo;
+    }
+
+    /**
+     * @param string $additionalInfo
+     *
+     * @return CardTopUpRequest
+     */
+    public function setAdditionalInfo($additionalInfo)
+    {
+        $this->additionalInfo = $additionalInfo;
+
+        return $this;
+    }
 }

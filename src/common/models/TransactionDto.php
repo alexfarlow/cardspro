@@ -14,26 +14,106 @@ class TransactionDto extends Model
      *
      * @var integer
      */
-    public $amount;
+    private $amount;
 
     /**
      * Идентификатор транзакции
      *
      * @var integer
      */
-    public $id;
+    private $id;
 
     /**
      * Описание транзакции
      *
      * @var string
      */
-    public $description;
+    private $description;
 
     /**
      * Информации о правиле
      *
      * @var LoyaltyRuleDto
      */
-    public $loyaltyRule;
+    private $loyaltyRule;
+
+    /**
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param int $amount
+     *
+     * @return TransactionDto
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return TransactionDto
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return TransactionDto
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return LoyaltyRuleDto
+     */
+    public function getLoyaltyRule()
+    {
+        return $this->loyaltyRule;
+    }
+
+    /**
+     * @param LoyaltyRuleDto $loyaltyRule
+     *
+     * @return TransactionDto
+     */
+    public function setLoyaltyRule($loyaltyRule)
+    {
+        $this->loyaltyRule = $loyaltyRule;
+
+        return $this;
+    }
 }

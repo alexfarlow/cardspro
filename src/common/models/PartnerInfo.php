@@ -14,19 +14,19 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    public $requestId;
+    private $requestId;
     
     /**
      * Код точки партнера
      */
-    public $partnerCode;
+    private $partnerCode;
     
     /**
      * Дата и время формирования запроса.
      * 
      * @var string
      */
-    public $requestDate;
+    private $requestDate;
     
     /**
      * Id заказа. 
@@ -34,7 +34,7 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    public $orderId;
+    private $orderId;
     
     /**
      * Идентификатор пользователя. 
@@ -42,7 +42,7 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    public $userIdentifier;
+    private $userIdentifier;
 
     /**
      * Единица измерения (валюта). 
@@ -54,5 +54,125 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    public $currency;
+    private $currency;
+
+    /**
+     * @return string
+     */
+    public function getRequestId()
+    {
+        return $this->requestId;
+    }
+
+    /**
+     * @param string $requestId
+     *
+     * @return PartnerInfo
+     */
+    public function setRequestId($requestId)
+    {
+        $this->requestId = $requestId;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPartnerCode()
+    {
+        return $this->partnerCode;
+    }
+
+    /**
+     * @param mixed $partnerCode
+     *
+     * @return PartnerInfo
+     */
+    public function setPartnerCode($partnerCode)
+    {
+        $this->partnerCode = $partnerCode;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRequestDate()
+    {
+        return $this->requestDate;
+    }
+
+    /**
+     * @param string $requestDate
+     *
+     * @return PartnerInfo
+     */
+    public function setRequestDate($requestDate)
+    {
+        $this->requestDate = $requestDate;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->orderId;
+    }
+
+    /**
+     * @param string $orderId
+     *
+     * @return PartnerInfo
+     */
+    public function setOrderId($orderId)
+    {
+        $this->orderId = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserIdentifier()
+    {
+        return $this->userIdentifier;
+    }
+
+    /**
+     * @param string $userIdentifier
+     *
+     * @return PartnerInfo
+     */
+    public function setUserIdentifier($userIdentifier)
+    {
+        $this->userIdentifier = $userIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    /**
+     * @param string $currency
+     *
+     * @return PartnerInfo
+     */
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
 }

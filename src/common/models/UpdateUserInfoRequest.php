@@ -12,12 +12,52 @@ class UpdateUserInfoRequest extends Model
      *
      * @var UserForm
      */
-    public $userForm;
+    private $userForm;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    public $additionalInfo;
+    private $additionalInfo;
+
+    /**
+     * @return UserForm
+     */
+    public function getUserForm()
+    {
+        return $this->userForm;
+    }
+
+    /**
+     * @param UserForm $userForm
+     *
+     * @return UpdateUserInfoRequest
+     */
+    public function setUserForm($userForm)
+    {
+        $this->userForm = $userForm;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalInfo()
+    {
+        return $this->additionalInfo;
+    }
+
+    /**
+     * @param string $additionalInfo
+     *
+     * @return UpdateUserInfoRequest
+     */
+    public function setAdditionalInfo($additionalInfo)
+    {
+        $this->additionalInfo = $additionalInfo;
+
+        return $this;
+    }
 }

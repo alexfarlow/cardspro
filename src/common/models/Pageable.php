@@ -11,12 +11,52 @@ class Pageable extends Model
      *
      * @var integer
      */
-    public $page;
+    private $page;
 
     /**
      * Количество операций на одной странице
      *
      * @var integer
      */
-    public $size;
+    private $size;
+
+    /**
+     * @return int
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * @param int $page
+     *
+     * @return Pageable
+     */
+    public function setPage($page)
+    {
+        $this->page = $page;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * @param int $size
+     *
+     * @return Pageable
+     */
+    public function setSize($size)
+    {
+        $this->size = $size;
+
+        return $this;
+    }
 }

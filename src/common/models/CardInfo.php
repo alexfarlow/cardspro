@@ -12,7 +12,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    public $additionalInfo;	
+    private $additionalInfo;	
 
     
     /**
@@ -20,7 +20,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    public $address;
+    private $address;
     
     
     /**
@@ -28,7 +28,7 @@ class CardInfo extends Model
      * 
      * @var CardBalance[]
      */
-    public $balances;
+    private $balances;
     
     
     /**
@@ -36,7 +36,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    public $barcode;
+    private $barcode;
     
     
     /**
@@ -44,7 +44,7 @@ class CardInfo extends Model
      *
      * @var CardDesign
      */
-    public $cardDesign;
+    private $cardDesign;
     
     
     /**
@@ -52,7 +52,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    public $externalId;
+    private $externalId;
     
     
     /**
@@ -60,7 +60,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    public $cardName;
+    private $cardName;
     
     
     /**
@@ -68,7 +68,7 @@ class CardInfo extends Model
      *
      * @var UserForm
      */
-    public $user;
+    private $user;
     
     
     /**
@@ -76,6 +76,185 @@ class CardInfo extends Model
      *
      * @var string
      */
-    public $osmiLink;
-}
+    private $osmiLink;
 
+    /**
+     * @return string
+     */
+    public function getAdditionalInfo()
+    {
+        return $this->additionalInfo;
+    }
+
+    /**
+     * @param string $additionalInfo
+     *
+     * @return CardInfo
+     */
+    public function setAdditionalInfo($additionalInfo)
+    {
+        $this->additionalInfo = $additionalInfo;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string $address
+     *
+     * @return CardInfo
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * @return CardBalance[]
+     */
+    public function getBalances()
+    {
+        return $this->balances;
+    }
+
+    /**
+     * @param CardBalance[] $balances
+     *
+     * @return CardInfo
+     */
+    public function setBalances($balances)
+    {
+        $this->balances = $balances;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBarcode()
+    {
+        return $this->barcode;
+    }
+
+    /**
+     * @param string $barcode
+     *
+     * @return CardInfo
+     */
+    public function setBarcode($barcode)
+    {
+        $this->barcode = $barcode;
+
+        return $this;
+    }
+
+    /**
+     * @return CardDesign
+     */
+    public function getCardDesign()
+    {
+        return $this->cardDesign;
+    }
+
+    /**
+     * @param CardDesign $cardDesign
+     *
+     * @return CardInfo
+     */
+    public function setCardDesign($cardDesign)
+    {
+        $this->cardDesign = $cardDesign;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExternalId()
+    {
+        return $this->externalId;
+    }
+
+    /**
+     * @param string $externalId
+     *
+     * @return CardInfo
+     */
+    public function setExternalId($externalId)
+    {
+        $this->externalId = $externalId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCardName()
+    {
+        return $this->cardName;
+    }
+
+    /**
+     * @param string $cardName
+     *
+     * @return CardInfo
+     */
+    public function setCardName($cardName)
+    {
+        $this->cardName = $cardName;
+
+        return $this;
+    }
+
+    /**
+     * @return UserForm
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param UserForm $user
+     *
+     * @return CardInfo
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOsmiLink()
+    {
+        return $this->osmiLink;
+    }
+
+    /**
+     * @param string $osmiLink
+     *
+     * @return CardInfo
+     */
+    public function setOsmiLink($osmiLink)
+    {
+        $this->osmiLink = $osmiLink;
+
+        return $this;
+    }
+}

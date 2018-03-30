@@ -16,21 +16,21 @@ class ErrorMessage
      *
      * @var integer
      */
-    public $errorCode;
+    private $errorCode;
 
     /**
      * Текст сообщения об ошибке.
      *
      * @var string
      */
-    public $errorMessage;
+    private $errorMessage;
 
     /**
      * Предупреждение
      *
      * @var Warning[]
      */
-    public $warnings;
+    private $warnings;
 
     /**
      * @return int
@@ -54,5 +54,29 @@ class ErrorMessage
     public function getWarnings()
     {
         return $this->warnings;
+    }
+
+    /**
+     * @param int $errorCode
+     */
+    public function setErrorCode($errorCode)
+    {
+        $this->errorCode = $errorCode;
+    }
+
+    /**
+     * @param string $errorMessage
+     */
+    public function setErrorMessage($errorMessage)
+    {
+        $this->errorMessage = $errorMessage;
+    }
+
+    /**
+     * @param Warning[] $warnings
+     */
+    public function setWarnings($warnings)
+    {
+        $this->warnings = $warnings;
     }
 }

@@ -3,6 +3,7 @@
 namespace cardspro\services\card;
 
 use cardspro\common\models\CardIdentifier;
+use cardspro\common\models\CardTopUpRequest;
 use cardspro\common\models\PurchaseRequest;
 use cardspro\common\models\UserForm;
 use cardspro\common\models\WriteOffRequest;
@@ -43,34 +44,12 @@ class CardService extends BaseService
     }
 
     /**
-     * @todo modify this methid
+     * @todo modify this method
      * @param array $arr
      */
     public function batch(Array $arr)
-    {/**
-        switch(get_instance($obj)){
-            case CancelDto :
-                break;
+    {
 
-            default:
-                ;
-        }
-
-
-         * ActivateDto $activations = [],
-         $cancels = [],
-        PurchaseDto $discounts = [],
-        PurchaseDto $earnings = [],
-        FindInfoDto $infos = [],
-        FindOperationsDto $operations = [],
-        PurchaseDto $purchases = [],
-        RefundDto $refunds = []
-        statusChanges	Array[CardChangeStatusDto]	Изменение статуса	-
-        topUps	Array[TopUpDto]	Пополнение	-
-        writeOffs	Array[WriteOffDto]	Списание	-
-        issues	Array[IssueCardDto]	Выпуска карты)
-         */
-        return ;
     }
 
     /**
@@ -261,7 +240,7 @@ class CardService extends BaseService
      * Пополнение карты.
      *
      * @param PartnerInfo      $partnerInfo         Информация о запросе партнёра
-     * @param CardTopR $cardTopUpRequest    Параметры списания
+     * @param CardTopUpRequest $cardTopUpRequest    Параметры списания
      *
      * @return mixed
      */

@@ -11,21 +11,79 @@ class LoyaltyLevelDto extends Model
      *
      * @var string
      */
-    public $code;
-    
-    
+    private $code;
+
     /**
      * Название уровня (описание)
      *
      * @var string
      */
-    public $description;
-    
-    
+    private $description;
+
     /**
      * Код дизайна для уровня
      *
      * @var string
      */
-    public $designCode;
+    private $designCode;
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param string $code
+     *
+     * @return LoyaltyLevelDto
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return LoyaltyLevelDto
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDesignCode()
+    {
+        return $this->designCode;
+    }
+
+    /**
+     * @param string $designCode
+     *
+     * @return LoyaltyLevelDto
+     */
+    public function setDesignCode($designCode)
+    {
+        $this->designCode = $designCode;
+
+        return $this;
+    }
 }

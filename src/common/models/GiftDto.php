@@ -11,7 +11,7 @@ class GiftDto extends Model
      *
      * @var string
      */
-    public $activeTo;
+    private $activeTo;
     
     
     /**
@@ -19,7 +19,7 @@ class GiftDto extends Model
      *
      * @var string
      */
-    public $createdAt;
+    private $createdAt;
     
     
     /**
@@ -27,7 +27,7 @@ class GiftDto extends Model
      *
      * @var GoodsDto
      */
-    public $goods;
+    private $goods;
     
     
     /**
@@ -35,5 +35,85 @@ class GiftDto extends Model
      *
      * @var integer
      */
-    public $id;
+    private $id;
+
+    /**
+     * @return string
+     */
+    public function getActiveTo()
+    {
+        return $this->activeTo;
+    }
+
+    /**
+     * @param string $activeTo
+     *
+     * @return GiftDto
+     */
+    public function setActiveTo($activeTo)
+    {
+        $this->activeTo = $activeTo;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param string $createdAt
+     *
+     * @return GiftDto
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return GoodsDto
+     */
+    public function getGoods()
+    {
+        return $this->goods;
+    }
+
+    /**
+     * @param GoodsDto $goods
+     *
+     * @return GiftDto
+     */
+    public function setGoods($goods)
+    {
+        $this->goods = $goods;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return GiftDto
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 }

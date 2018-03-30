@@ -11,12 +11,52 @@ class OrderAddon extends Model
      *
      * @var string
      */
-    public $name;
+    private $name;
 
     /**
      * Значение дополнительного параметр
      *
      * @var string
      */
-    public $value;
+    private $value;
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return OrderAddon
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return OrderAddon
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
 }

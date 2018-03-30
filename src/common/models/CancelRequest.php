@@ -19,7 +19,7 @@ class CancelRequest extends Model
      *
      * @var CardIdentifier
      */
-    public $cardIdentifier;
+    private $cardIdentifier;
     
     
     /**
@@ -27,7 +27,7 @@ class CancelRequest extends Model
      *
      * @var integer
      */
-    public $operationId;
+    private $operationId;
     
     
     /**
@@ -35,5 +35,65 @@ class CancelRequest extends Model
      *
      * @var string
      */
-    public $additionalInfo;
+    private $additionalInfo;
+
+    /**
+     * @return CardIdentifier
+     */
+    public function getCardIdentifier()
+    {
+        return $this->cardIdentifier;
+    }
+
+    /**
+     * @param CardIdentifier $cardIdentifier
+     *
+     * @return CancelRequest
+     */
+    public function setCardIdentifier($cardIdentifier)
+    {
+        $this->cardIdentifier = $cardIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOperationId()
+    {
+        return $this->operationId;
+    }
+
+    /**
+     * @param int $operationId
+     *
+     * @return CancelRequest
+     */
+    public function setOperationId($operationId)
+    {
+        $this->operationId = $operationId;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalInfo()
+    {
+        return $this->additionalInfo;
+    }
+
+    /**
+     * @param string $additionalInfo
+     *
+     * @return CancelRequest
+     */
+    public function setAdditionalInfo($additionalInfo)
+    {
+        $this->additionalInfo = $additionalInfo;
+
+        return $this;
+    }
 }
