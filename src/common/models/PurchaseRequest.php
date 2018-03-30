@@ -11,21 +11,21 @@ class PurchaseRequest extends Model
      * 
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
 
     /**
      * Информация о чеке
      * 
      * @var PurchaseOrder
      */
-    private $order;	
+    public $order;
 
     /**
      * Код продукта
      *
      * @var string
      */
-    private $productCode;
+    public $productCode;
 
     /**
      * Идентификатор операции списания.
@@ -34,21 +34,21 @@ class PurchaseRequest extends Model
      *
      * @var integer
      */
-    private $writeOffOperationId;
+    public $writeOffOperationId;
 
     /**
      * Идентификационный код (OTP-код подтверждения из СМС)
      *
      * @var integer
      */
-    private $identCode;
+    public $identCode;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return CardIdentifier

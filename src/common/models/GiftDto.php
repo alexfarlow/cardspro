@@ -11,7 +11,7 @@ class GiftDto extends Model
      *
      * @var string
      */
-    private $activeTo;
+    public $activeTo;
     
     
     /**
@@ -19,7 +19,7 @@ class GiftDto extends Model
      *
      * @var string
      */
-    private $createdAt;
+    public $createdAt;
     
     
     /**
@@ -27,7 +27,7 @@ class GiftDto extends Model
      *
      * @var GoodsDto
      */
-    private $goods;
+    public $goods;
     
     
     /**
@@ -35,7 +35,7 @@ class GiftDto extends Model
      *
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * @return string

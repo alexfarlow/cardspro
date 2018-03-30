@@ -11,14 +11,14 @@ class OrderAddon extends Model
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * Значение дополнительного параметр
      *
      * @var string
      */
-    private $value;
+    public $value;
 
     /**
      * @return string

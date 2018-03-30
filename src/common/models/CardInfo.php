@@ -12,7 +12,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    private $additionalInfo;	
+    public $additionalInfo;
 
     
     /**
@@ -20,7 +20,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    private $address;
+    public $address;
     
     
     /**
@@ -28,7 +28,7 @@ class CardInfo extends Model
      * 
      * @var CardBalance[]
      */
-    private $balances;
+    public $balances;
     
     
     /**
@@ -36,7 +36,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    private $barcode;
+    public $barcode;
     
     
     /**
@@ -44,7 +44,7 @@ class CardInfo extends Model
      *
      * @var CardDesign
      */
-    private $cardDesign;
+    public $cardDesign;
     
     
     /**
@@ -52,7 +52,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    private $externalId;
+    public $externalId;
     
     
     /**
@@ -60,7 +60,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    private $cardName;
+    public $cardName;
     
     
     /**
@@ -68,7 +68,7 @@ class CardInfo extends Model
      *
      * @var UserForm
      */
-    private $user;
+    public $user;
     
     
     /**
@@ -76,7 +76,7 @@ class CardInfo extends Model
      *
      * @var string
      */
-    private $osmiLink;
+    public $osmiLink;
 
     /**
      * @return string

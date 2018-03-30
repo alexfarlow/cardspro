@@ -11,28 +11,28 @@ class GiftProduct extends Model
      *
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * Название продукта
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * Код продукта
      *
      * @var string
      */
-    private $code;
+    public $code;
 
     /**
      * Тип продукта: [POINTS, PURCHASES]
      *
      * @var string
      */
-    private $type;
+    public $type;
 
     /**
      * Тип счёта карты (баланса). [BONUS, DISCOUNT, GIFT]
@@ -43,28 +43,28 @@ class GiftProduct extends Model
      *
      * @var string
      */
-    private $kind;
+    public $kind;
 
     /**
      * Цена
      *
      * @var integer
      */
-    private $price;
+    public $price;
 
     /**
      * Код дизайна продукта;
      *
      * @var string
      */
-    private $cardDesignCode;
+    public $cardDesignCode;
 
     /**
      * Дизайн карты
      *
      * @var CardDesign
      */
-    private $cardDesign;
+    public $cardDesign;
 
     /**
      * @return int

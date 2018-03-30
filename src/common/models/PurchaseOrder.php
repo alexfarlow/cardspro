@@ -11,49 +11,49 @@ class PurchaseOrder extends Model
      *
      * @var OrderAddon[]
      */
-    private $addons;
+    public $addons;
 
     /**
      * Сумма чека
      *
      * @var string
      */
-    private $amount;
+    public $amount;
 
     /**
      * Блок с информацией о товарах в чеке (покупке)
      *
      * @var OrderGoods[]
      */
-    private $goods;
+    public $goods;
 
     /**
      * Номер чека, Обязателен для покупки и возврата.
      *
      * @var string
      */
-    private $number;
+    public $number;
 
     /**
      * Дата/время чека
      *
      * @var string
      */
-    private $orderDate;
+    public $orderDate;
 
     /**
      * Блок с информацией об оплате
      *
      * @var Payment[]
      */
-    private $payments;
+    public $payments;
 
     /**
      * Сумма операции возврата
      *
      * @var integer
      */
-    private $refundAmount;
+    public $refundAmount;
 
     /**
      * @return OrderAddon[]

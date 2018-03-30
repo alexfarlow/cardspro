@@ -11,21 +11,21 @@ class RestorePasswordRequest extends Model
      *
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
 
     /**
      * Код идентификации (код подтверждения из СМС)
      *
      * @var integer
      */
-    private $identCode;
+    public $identCode;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return CardIdentifier

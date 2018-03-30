@@ -11,14 +11,14 @@ class PartnerNode extends Model
      *
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * Название точки
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * @return int

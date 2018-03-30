@@ -11,41 +11,41 @@ class OrderGoods extends Model
      *
      * @var integer
      */
-    private $quantity;
+    public $quantity;
 
     /**
      * Артикул товара
      *
      * @var string
      */
-    private $id;
+    public $id;
 
     /**
      * Номер строки в чеке
      *
      * @var integer
      */
-    private $lineNumber;
+    public $lineNumber;
 
     /**
      * Информация об оплате
      * @var Payment[]
      */
-    private $payments;
+    public $payments;
 
     /**
      * Цена товара
      *
      * @var integer
      */
-    private $price;
+    public $price;
 
     /**
      * Наименование товара
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * @return int

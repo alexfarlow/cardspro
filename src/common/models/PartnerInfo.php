@@ -14,19 +14,20 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    private $requestId;
+    public $requestId;
     
     /**
      * Код точки партнера
      */
-    private $partnerCode;
+    public $partnerCode;
     
     /**
      * Дата и время формирования запроса.
      * 
      * @var string
+     * @example "2017-12-04T08:48:45.307Z"
      */
-    private $requestDate;
+    public $requestDate;
     
     /**
      * Id заказа. 
@@ -34,7 +35,7 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    private $orderId;
+    public $orderId;
     
     /**
      * Идентификатор пользователя. 
@@ -42,7 +43,7 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    private $userIdentifier;
+    public $userIdentifier;
 
     /**
      * Единица измерения (валюта). 
@@ -54,7 +55,7 @@ class PartnerInfo extends Model
      * 
      * @var string
      */
-    private $currency;
+    public $currency;
 
     /**
      * @return string

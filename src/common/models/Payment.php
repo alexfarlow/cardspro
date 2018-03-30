@@ -11,14 +11,14 @@ class Payment extends Model
      *
      * @var integer
      */
-    private $amount;
+    public $amount;
 
    /**
     * Тип платежного инструмента
     *
     * @var string
     */
-    private $type;
+    public $type;
 
     /**
      * @return int

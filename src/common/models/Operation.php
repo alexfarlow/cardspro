@@ -14,91 +14,91 @@ class Operation extends Model
      *
      * @var integer
      */
-    private $identifier;
+    public $identifier;
 
     /**
      * Информация о точке, на которой совершена операция
      *
      * @var PartnerNode
      */
-    private $node;
+    public $node;
 
     /**
      * Дата/время операции
      *
      * @var string
      */
-    private $operationDate;
+    public $operationDate;
 
     /**
      * Тип операции
      *
      * @var string
      */
-    private $operationType;
+    public $operationType;
 
     /**
      * Код типа операции
      *
      * @var string
      */
-    private $operationTypeCode;
+    public $operationTypeCode;
 
     /**
      * Сумма баллов, потраченная в рамках операции.
      *
      * @var integer
      */
-    private $pointsAmount;
+    public $pointsAmount;
 
     /**
      * Информация о продукте, по которому совершена операция
      *
      * @var GiftProduct
      */
-    private $product;
+    public $product;
 
     /**
      * Информация о покупке (для типа операции PURCHASE)
      *
      * @var PartnerOrderDto
      */
-    private $order;
+    public $order;
 
     /**
      * 19-значный номер карты
      *
      * @var string
      */
-    private $barcode;
+    public $barcode;
 
     /**
      * Короткий номер карты
      *
      * @var string
      */
-    private $externalId;
+    public $externalId;
 
     /**
      * Признак отмененной операции
      *
      * @var boolean
      */
-    private $cancelled;
+    public $cancelled;
 
     /**
      * Код валюты (единицы измерения), в которых проведена операция
      *
      * @var string
      */
-    private $currencyCode;
+    public $currencyCode;
 
     /**
      * Сумма начисленных бонусов
      *
      * @var integer
      */
-    private $earnedPoints;
+    public $earnedPoints;
 
     /**
      * Информация о типах начисленных бонусов;
@@ -106,42 +106,42 @@ class Operation extends Model
      *
      * @var object
      */
-    private $earnedPointsAmountByType;
+    public $earnedPointsAmountByType;
 
     /**
      * Информация о подарках
      *
      * @var GiftDto[]
      */
-    private $gifts;
+    public $gifts;
 
     /**
      * Связанные операции
      *
      * @var OperationDto[]
      */
-    private $linkedOperations;
+    public $linkedOperations;
 
     /**
      * Родительсткая операция
      *
      * @var OperationDto
      */
-    private $parentOperation;
+    public $parentOperation;
 
     /**
      * Сумма списанных бонусов
      *
      * @var integer
      */
-    private $spendBonuses;
+    public $spendBonuses;
 
     /**
      * Информация о транзациях
      *
      * @var TransactionDto[]
      */
-    private $transactions;
+    public $transactions;
 
     /**
      * @return int

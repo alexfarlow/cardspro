@@ -16,7 +16,7 @@ class CardActivateRequest extends Model
      * 
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
     
     
     /**
@@ -24,7 +24,7 @@ class CardActivateRequest extends Model
      * 
      * @var string
      */
-    private $productCode;
+    public $productCode;
     
     
     /**
@@ -32,7 +32,7 @@ class CardActivateRequest extends Model
      * 
      * @var integer
      */
-    private $identCode;
+    public $identCode;
     
 
     /**
@@ -40,7 +40,7 @@ class CardActivateRequest extends Model
      * 
      * @var UserForm
      */
-    private $user;
+    public $user;
      
     
     /**
@@ -48,7 +48,7 @@ class CardActivateRequest extends Model
      * 
      * @var integer
      */
-    private $price;
+    public $price;
      
     
     /**
@@ -60,7 +60,7 @@ class CardActivateRequest extends Model
      * 
      * @var boolean
      */
-    private $offline;
+    public $offline;
      
     
     /**
@@ -72,7 +72,7 @@ class CardActivateRequest extends Model
      * 
      * @var boolean
      */
-    private $accepted;
+    public $accepted;
 
     /**
      * @return CardIdentifier

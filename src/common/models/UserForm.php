@@ -11,56 +11,56 @@ class UserForm extends Model
      *
      * @var string
      */
-    private $lastName;
+    public $lastName;
 
     /**
      * Имя
      *
      * @var string
      */
-    private $firstName;
+    public $firstName;
 
     /**
      * Отчество
      *
      * @var string;
      */
-    private $middleName;
+    public $middleName;
 
     /**
      * Дата рождения
      *
      * @var string
      */
-    private $birthDate;
+    public $birthDate;
 
     /**
      * Пол [MALE, FEMALE]
      *
      * @var string
      */
-    private $gender;
+    public $gender;
 
     /**
      * Номер телефона в формате +7ХХХХХХХХХХ
      *
      * @var string
      */
-    private $cellPhone;
+    public $cellPhone;
 
     /**
      * Адрес электронной почты
      *
      * @var string
      */
-    private $email;
+    public $email;
 
     /**
      * Город (адрес)
      *
      * @var string
      */
-    private $city;
+    public $city;
 
     /**
      * Дополнительная информация.
@@ -69,14 +69,14 @@ class UserForm extends Model
      * @var string
      * @example "additionalInfo": "{\"children\":[ {\"name\": \"Jonh\",\"gender\": \"MALE\",\"birthDate\": \"27.08.1992\"}]}"
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * Идентификатор клиента на процессинге CardsPro (не указывать при активации)
      *
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * @return string

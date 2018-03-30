@@ -11,14 +11,14 @@ class RefundRequest extends Model
      *
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
 
     /**
      * Идентификатор операции, по которой осуществляется возврат
      *
      * @var integer
      */
-    private $operationId;
+    public $operationId;
 
     /**
      * Сумма возврата для возврата по операции списания или сумма возврата при частичном возврате покупки.
@@ -27,21 +27,21 @@ class RefundRequest extends Model
      *
      * @var integer
      */
-    private $refundAmount;
+    public $refundAmount;
 
     /**
      * Идентификатор транзакции
      *
      * @var integer
      */
-    private $transactionId;
+    public $transactionId;
 
     /**
      * Код продукта
      *
      * @var string
      */
-    private $productCode;
+    public $productCode;
 
     /**
      * Информация о возвращаемых товарах
@@ -49,14 +49,14 @@ class RefundRequest extends Model
      *
      * @var PurchaseOrder
      */
-    private $reversedPurchaseOrder;
+    public $reversedPurchaseOrder;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return CardIdentifier

@@ -16,21 +16,21 @@ class ErrorMessage
      *
      * @var integer
      */
-    private $errorCode;
+    public $errorCode;
 
     /**
      * Текст сообщения об ошибке.
      *
      * @var string
      */
-    private $errorMessage;
+    public $errorMessage;
 
     /**
      * Предупреждение
      *
      * @var Warning[]
      */
-    private $warnings;
+    public $warnings;
 
     /**
      * @return int

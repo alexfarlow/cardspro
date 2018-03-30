@@ -14,35 +14,35 @@ class PartnerOrderGoodDto extends Model
      *
      * @var integer
      */
-    private $name;
+    public $name;
 
     /**
      * Цена товара
      *
      * @var integer
      */
-    private $price;
+    public $price;
 
     /**
      * Количество товара
      *
      * @var number
      */
-    private $quantity;
+    public $quantity;
 
     /**
      * Количество возвращенного товара
      *
      * @var number
      */
-    private $refundQuantity;
+    public $refundQuantity;
 
     /**
      * Описание товара
      *
      * @var string
      */
-    private $description;
+    public $description;
 
     /**
      * @return int

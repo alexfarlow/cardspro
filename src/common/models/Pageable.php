@@ -11,14 +11,14 @@ class Pageable extends Model
      *
      * @var integer
      */
-    private $page;
+    public $page;
 
     /**
      * Количество операций на одной странице
      *
      * @var integer
      */
-    private $size;
+    public $size;
 
     /**
      * @return int

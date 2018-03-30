@@ -11,7 +11,7 @@ class CardDesign extends Model
      *
      * @var string
      */
-    private $code;
+    public $code;
     
     
     /**
@@ -19,7 +19,7 @@ class CardDesign extends Model
      *
      * @var integer
      */
-    private $id;
+    public $id;
     
     
     /**
@@ -27,7 +27,7 @@ class CardDesign extends Model
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * @return string

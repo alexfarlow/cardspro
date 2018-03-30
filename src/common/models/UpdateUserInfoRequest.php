@@ -12,14 +12,14 @@ class UpdateUserInfoRequest extends Model
      *
      * @var UserForm
      */
-    private $userForm;
+    public $userForm;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return UserForm

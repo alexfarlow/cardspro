@@ -16,28 +16,28 @@ class DiscountOrder
      *
      * @var integer
      */
-    private $discountAmount;
+    public $discountAmount;
 
     /**
      * Информация о товарах и распределении скидок между ними
      *
      * @var DiscountGoods[]
      */
-    private $discountGoods;
+    public $discountGoods;
 
     /**
      * Номер чека
      *
      * @var string
      */
-    private $number;
+    public $number;
 
     /**
      * Дата/время чека
      *
      * @var string
      */
-    private $orderDate;
+    public $orderDate;
 
     /**
      * @return string

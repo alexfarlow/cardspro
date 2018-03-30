@@ -14,63 +14,63 @@ class LoyaltyRuleDto extends Model
      *
      * @var integer
      */
-    private $description;
+    public $description;
 
     /**
      * Признак действующей акции
      *
      * @var boolean
      */
-    private $disable;
+    public $disable;
 
     /**
      * Тип события, инициирующего обработку правила лояльности
      *
      * @var string
      */
-    private $eventType;
+    public $eventType;
 
     /**
      * Идентификатор акции
      *
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * Тип бонусов ['EARN', 'GIFT', 'EVENT', 'DISCOUNT']
      *
      * @var string
      */
-    private $label;
+    public $label;
 
     /**
      * Название акции
      *
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * Код партнерской точки, для которой действует правило
      *
      * @var string
      */
-    private $partnerNodeCode;
+    public $partnerNodeCode;
 
     /**
      * Код продукта, для которого действует правило
      *
      * @var string
      */
-    private $productCode;
+    public $productCode;
 
     /**
      * Правило обработки правила (JSON-строка)
      *
      * @var string
      */
-    private $rule;
+    public $rule;
 
     /**
      * Тип правила.
@@ -81,28 +81,28 @@ class LoyaltyRuleDto extends Model
      *
      * @var string
      */
-    private $type;
+    public $type;
 
     /**
      * Описание правила
      *
      * @var string
      */
-    private $typeDescription;
+    public $typeDescription;
 
     /**
      * Начало действия акции
      *
      * @var string
      */
-    private $validFrom;
+    public $validFrom;
 
     /**
      * Конец действия акции
      *
      * @var string
      */
-    private $validTo;
+    public $validTo;
 
     /**
      * @return int

@@ -11,21 +11,21 @@ class GoodsDto extends Model
      *
      * @var string
      */
-    private $goodsExternalId;
+    public $goodsExternalId;
 
     /**
      * Внутренний идентификатор товара (подарка)
      *
      * @var integer
      */
-    private $Id;
+    public $Id;
 
     /**
      * Наименование товара (подарка)
      *
      * @var string
      */
-    private $goodsName;
+    public $goodsName;
 
     /**
      * @return string

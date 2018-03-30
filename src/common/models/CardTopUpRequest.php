@@ -11,21 +11,21 @@ class CardTopUpRequest extends Model
      *
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
 
     /**
      * Код продукта
      *
      * @var string
      */
-    private $productCode;
+    public $productCode;
 
     /**
      * Пополняемое количество проходов	Обязательно для счетов (продуктов) с типом PURCHASES
      *
      * @var integer
      */
-    private $purchaseCount;
+    public $purchaseCount;
 
     /**
      * Сумма пополнения в единицах измерения (валюте), указанных в параметре currency PartnerInfo.
@@ -33,14 +33,14 @@ class CardTopUpRequest extends Model
      *
      * @var integer
      */
-    private $sum;
+    public $sum;
 
     /**
      * Дополнительные парамеры
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return CardIdentifier

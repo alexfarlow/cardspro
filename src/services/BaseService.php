@@ -124,7 +124,7 @@ abstract class BaseService
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_FOLLOWLOCATION => true,
                     CURLOPT_POST           => true,
-                    CURLOPT_HEADER         => true,
+                    CURLOPT_HEADER         => false,
                     CURLOPT_SSL_VERIFYPEER => false,
                     CURLOPT_SSL_VERIFYHOST => false,
                     CURLOPT_TIMEOUT        => 1200,

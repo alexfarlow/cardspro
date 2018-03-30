@@ -14,87 +14,87 @@ class BaseResponse
      *
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
 
     /**
      * Блок с информацией о карте
      *
      * @var CardInfo
      */
-    private $cardInfo;
+    public $cardInfo;
 
     /**
      * Блок с информацией о скидке
      *
      * @var DiscountOrder
      */
-    private $discountOrder;
+    public $discountOrder;
 
     /**
      * Блок с информацией об ошибках
      *
      * @var ErrorMessage[]
      */
-    private $errorMessages;
+    public $errorMessages;
 
     /**
      * Информационное сообщение. Например, может использоваться для печати в чеке.
      *
      * @var string
      */
-    private $message;
+    public $message;
 
     /**
      * Информация об операции
      *
      * @var Operation
      */
-    private $operation;
+    public $operation;
 
     /**
      * @var Operation[]
      */
-    private $operations;
+    public $operations;
 
     /**
      * Идентификатор операции
      *
      * @var integer
      */
-    private $operationId;
+    public $operationId;
 
     /**
      * Информация о чеке
      *
      * @var PurchaseOrder
      */
-    private $order;
+    public $order;
 
     /**
      * Уникальный идентификатор от партнера, генерирующийся на его стороне (необходим для идентификации запроса и ответа)
      *
      * @var string
      */
-    private $requestId;
+    public $requestId;
 
     /**
      * Код партнёра
      *
      * @var string
      */
-    private $partnerCode;
+    public $partnerCode;
 
     /**
      * Информация о возвращаемых товарах
      *
      * @var PurchaseOrder
      */
-    private $reversedPurchaseOrder;
+    public $reversedPurchaseOrder;
 
     /**
      * @var CardInfo[]
      */
-    private $userCard;
+    public $userCard;
 
     /**
      * @return CardIdentifier

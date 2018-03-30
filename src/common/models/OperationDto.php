@@ -14,28 +14,28 @@ class OperationDto extends Model
      *
      * @var string
      */
-    private $currencyCode;
+    public $currencyCode;
 
     /**
      * Идентификатор операции
      *
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * Тип операции
      *
      * @var string
      */
-    private $operationType;
+    public $operationType;
 
     /**
      * Сумма баллов
      *
      * @var integer
      */
-    private $pointsAmount;
+    public $pointsAmount;
 
     /**
      * @return string

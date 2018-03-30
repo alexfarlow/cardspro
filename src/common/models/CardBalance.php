@@ -11,7 +11,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $activatedAt;
+    public $activatedAt;
     
     
     /**
@@ -19,7 +19,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $expireDate;
+    public $expireDate;
     
     
     /**
@@ -27,7 +27,7 @@ class CardBalance extends Model
      *
      * @var CardDesign
      */
-    private $design;
+    public $design;
     
     
     /**
@@ -35,7 +35,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    private $earnedAmount;
+    public $earnedAmount;
     
     
     /**
@@ -43,7 +43,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    private $holdPointsAmount;
+    public $holdPointsAmount;
     
     
     /**
@@ -51,7 +51,7 @@ class CardBalance extends Model
      *
      * @var boolean
      */
-    private $pinExists;
+    public $pinExists;
     
     
     /**
@@ -59,7 +59,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    private $pointsAmount;
+    public $pointsAmount;
     
     
     /**
@@ -67,7 +67,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    private $productId;
+    public $productId;
     
     
     /**
@@ -75,7 +75,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $productCode;
+    public $productCode;
     
     
     /**
@@ -83,7 +83,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $productName;
+    public $productName;
     
     
     /**
@@ -91,7 +91,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $productType;
+    public $productType;
     
     
     /**
@@ -99,7 +99,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $productDesignCode;
+    public $productDesignCode;
     
     
     /**
@@ -108,7 +108,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    private $purchaseCount;
+    public $purchaseCount;
     
     
     /**
@@ -116,7 +116,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    private $purchaseAmount;
+    public $purchaseAmount;
     
     
     /**
@@ -124,7 +124,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $status;
+    public $status;
     
     
     /**
@@ -132,7 +132,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $statusCode;
+    public $statusCode;
     
     
     /**
@@ -140,7 +140,7 @@ class CardBalance extends Model
      *
      * @var integer
      */
-    private $topUpCount;
+    public $topUpCount;
     
     
     /**
@@ -148,7 +148,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $descriptionUrl;
+    public $descriptionUrl;
     
     
     /**
@@ -160,7 +160,7 @@ class CardBalance extends Model
      *
      * @var string
      */
-    private $kind;
+    public $kind;
     
     
     /**
@@ -168,7 +168,7 @@ class CardBalance extends Model
      *
      * @var LoyaltyLevelDto
      */
-    private $loyaltyLevel;
+    public $loyaltyLevel;
     
     
     /**
@@ -176,7 +176,7 @@ class CardBalance extends Model
      *
      * @var GiftDto[]
      */
-    private $gifts;
+    public $gifts;
 
     /**
      * @return string

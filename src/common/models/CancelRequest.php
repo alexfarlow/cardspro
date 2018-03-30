@@ -19,7 +19,7 @@ class CancelRequest extends Model
      *
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
     
     
     /**
@@ -27,7 +27,7 @@ class CancelRequest extends Model
      *
      * @var integer
      */
-    private $operationId;
+    public $operationId;
     
     
     /**
@@ -35,7 +35,7 @@ class CancelRequest extends Model
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return CardIdentifier

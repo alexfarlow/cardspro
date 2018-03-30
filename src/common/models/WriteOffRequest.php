@@ -14,7 +14,7 @@ class WriteOffRequest extends Model
      * 
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
 
     /**
      *  Сумма списания в баллах для карт с типом POINTS в единицах измерения (валюте), 
@@ -25,21 +25,21 @@ class WriteOffRequest extends Model
      * 
      * @var int
      */
-    private $bonusAmount;
+    public $bonusAmount;
 
     /**
      * Код продукта
      * 
      * @var string
      */
-    private $productCode;
+    public $productCode;
 
     /**
      * Информация о чеке 
      * 
      * @var PurchaseOrder
      */
-    private $order;
+    public $order;
 
     /**
      * Код идентификации
@@ -48,14 +48,14 @@ class WriteOffRequest extends Model
      * 
      * @var int
      */
-    private $identCode;
+    public $identCode;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return CardIdentifier

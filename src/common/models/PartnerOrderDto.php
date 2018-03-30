@@ -11,33 +11,33 @@ class PartnerOrderDto extends Model
      *
      * @var integer
      */
-    private $amount;
+    public $amount;
 
     /**
      * Товары из чека
      *
      * @var PartnerOrderGoodDto[]
      */
-    private $goods;
+    public $goods;
 
     /**
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * Номер чека
      *
      * @var string
      */
-    private $orderNumber;
+    public $orderNumber;
 
     /**
      * Сумма возврата
      *
      * @var integer
      */
-    private $refundAmount;
+    public $refundAmount;
 
     /**
      * @return int

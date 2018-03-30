@@ -11,42 +11,42 @@ class CardIdentifier extends Model
      *
      * @var string
      */
-    private $barcode;
+    public $barcode;
 
     /**
      * Идентификатор карты: 20-и символьный идентификатор карты (хеш)
      *
      * @var string
      */
-    private $hash;
+    public $hash;
 
     /**
      * Идентификатор карты: информация с магнитной полосы карты (содержит номер карты и пин код).
      *
      * @var string
      */
-    private $magneticTrackIdentifier;
+    public $magneticTrackIdentifier;
 
     /**
      * Проверочный код (пин-код). ПИН-код указывается при списании, если это предусмотрено настройками продукта.
      *
      * @var string
      */
-    private $pin;
+    public $pin;
 
     /**
      * Внешний (партнёрский) идентификатор карты - номер карты в формате партнёра. Например, короткий номер карты.
      *
      * @var string
      */
-    private $externalId;
+    public $externalId;
 
     /**
      * Номер телефона клиента в формате +7ХХХХХХХХХХ. Предназначен для получения информации о карте (метод card/info).
      *
      * @var string
      */
-    private $phone;
+    public $phone;
 
     /**
      * @return string

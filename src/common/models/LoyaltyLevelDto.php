@@ -11,21 +11,21 @@ class LoyaltyLevelDto extends Model
      *
      * @var string
      */
-    private $code;
+    public $code;
 
     /**
      * Название уровня (описание)
      *
      * @var string
      */
-    private $description;
+    public $description;
 
     /**
      * Код дизайна для уровня
      *
      * @var string
      */
-    private $designCode;
+    public $designCode;
 
     /**
      * @return string

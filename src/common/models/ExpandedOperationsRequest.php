@@ -18,7 +18,7 @@ class ExpandedOperationsRequest extends Model
      *
      * @var integer
      */
-    private $operationId;
+    public $operationId;
 
     /**
      * Уникальный идентификатор операции, по которой запрашивается информация
@@ -26,7 +26,7 @@ class ExpandedOperationsRequest extends Model
      *
      * @var string
      */
-    private $requestId;
+    public $requestId;
 
     /**
      * Номер чека. Возвращается последняя операция с данным номером чека в рамках партнёра.
@@ -36,14 +36,14 @@ class ExpandedOperationsRequest extends Model
      *
      * @var string
      */
-    private $orderNumber;
+    public $orderNumber;
 
     /**
      * Дополнительные параметры
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * @return int

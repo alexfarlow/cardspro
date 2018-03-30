@@ -14,28 +14,28 @@ class TransactionDto extends Model
      *
      * @var integer
      */
-    private $amount;
+    public $amount;
 
     /**
      * Идентификатор транзакции
      *
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * Описание транзакции
      *
      * @var string
      */
-    private $description;
+    public $description;
 
     /**
      * Информации о правиле
      *
      * @var LoyaltyRuleDto
      */
-    private $loyaltyRule;
+    public $loyaltyRule;
 
     /**
      * @return int

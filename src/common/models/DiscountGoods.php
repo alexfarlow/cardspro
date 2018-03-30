@@ -17,35 +17,35 @@ class DiscountGoods
      *
      * @var integer
      */
-    private $count;
+    public $count;
 
     /**
      * Сумма скидки по товару
      *
      * @var integer
      */
-    private $discountAmount;
+    public $discountAmount;
 
     /**
      * Артикул товара
      *
      * @var string
      */
-    private $id;
+    public $id;
 
     /**
      * Номер строки в чеке
      *
      * @var integer
      */
-    private $lineNumber;
+    public $lineNumber;
 
     /**
      * Количество товаров, которые можно подарить клиенту
      *
      * @var string
      */
-    private $giftCount;
+    public $giftCount;
 
     /**
      * @return int

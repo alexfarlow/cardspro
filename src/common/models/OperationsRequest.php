@@ -18,21 +18,21 @@ class OperationsRequest extends Model
      *
      * @var CardIdentifier
      */
-    private $cardIdentifier;
+    public $cardIdentifier;
 
     /**
      * Начальная дата (включительно)
      *
      * @var string
      */
-    private $dateFrom;
+    public $dateFrom;
 
     /**
      * Конечная дата (включительно)
      *
      * @var string
      */
-    private $dateTo;
+    public $dateTo;
 
 
     /**
@@ -40,49 +40,49 @@ class OperationsRequest extends Model
      *
      * @var Pageable
      */
-    private $pageable;
+    public $pageable;
 
     /**
      * Точка продаж	Обязателен, если не указан какой-либо из идентификаторов карт
      *
      * @var string
      */
-    private $partnerNodeCode;
+    public $partnerNodeCode;
 
     /**
      * Показывать ли отмененные операции.
      *
      * @var boolean
      */
-    private $cancelled = false;
+    public $cancelled = false;
 
     /**
      * Массив с типом операций, которые должны попасть в список операций
      *
      * @var string[]
      */
-    private $types;
+    public $types;
 
     /**
      * Порядок сортировки по дате операции. ['ASC', 'DESC']
      *
      * @var string
      */
-    private $order = 'DESC';
+    public $order = 'DESC';
 
     /**
      * Дополнителная информация
      *
      * @var string
      */
-    private $additionalInfo;
+    public $additionalInfo;
 
     /**
      * Тип продукта (карты): ['BONUS', 'DISCOUNT', 'GIFT']
      *
      * @var
      */
-    private $productKinds;
+    public $productKinds;
 
     /**
      * @return CardIdentifier
