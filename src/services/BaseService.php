@@ -171,6 +171,7 @@ abstract class BaseService
 
     private function parseResponse($response)
     {
+        $response = preg_replace('/,\s*"[^"]+":null|"[^"]+":null,?/', '', $response);
         $data = json_decode($response, false, 512, JSON_BIGINT_AS_STRING);
 
         if (!is_object($data)) {

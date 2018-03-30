@@ -1,6 +1,6 @@
 <?php
 
-namespace cardspro\services;
+namespace cardspro\services\operation;
 
 use cardspro\common\models\CancelRequest;
 use cardspro\common\models\ExpandedOperationsRequest;

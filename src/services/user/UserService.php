@@ -1,6 +1,6 @@
 <?php
 
-namespace cardspro\services;
+namespace cardspro\services\user;
 
 use cardspro\common\models\PartnerInfo;
 use cardspro\common\models\RestorePasswordRequest;
