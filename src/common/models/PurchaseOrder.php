@@ -55,6 +55,13 @@ class PurchaseOrder extends Model
      */
     public $refundAmount;
 
+    public function __construct(array $config = [])
+    {
+        $this->orderDate = date("Y-m-d\TH:i:s");
+
+        parent::__construct($config);
+    }
+
     /**
      * @return OrderAddon[]
      */

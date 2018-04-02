@@ -57,6 +57,14 @@ class PartnerInfo extends Model
      */
     public $currency;
 
+    public function __construct(array $config = [])
+    {
+        $this->requestId = uniqid();
+        $this->requestDate = date("c");
+
+        parent::__construct($config);
+    }
+
     /**
      * @return string
      */
