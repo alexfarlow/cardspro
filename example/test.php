@@ -22,23 +22,13 @@
         return $this->parseResponse($response);
  */
 require __DIR__.'/../vendor/autoload.php';
-use cardspro\services\card\CardService;
+use cardspro\services\CardsproService;
 use cardspro\common\models\PartnerInfo;
-use cardspro\common\models\CardActivateRequest;
 
+$cardspro = new CardsproService;
 
-$PartnerInfo = new PartnerInfo(['partnerCode' => '123']);
-$PartnerInfo
-    ->setRequestId('aaa')
-    ->setPartnerCode('bbbnmnm');
-
-
-$CardActivateRequest = new CardActivateRequest();
-
-
-$CardService = new CardService;
-$CardService
-    ->setSslCert("path_to_crt")
-    ->setSslCertPass('somepass');
-
-$r = $CardService->activate($PartnerInfo, $CardActivateRequest);
+$r = $cardspro
+    ->setSslCert('path://to.srt')
+    ->setSslCertPass('12344')
+    ->getCardService()
+    ->activate(new PartnerInfo(['partnerCode' => '123']), new CardActivateRequest());
