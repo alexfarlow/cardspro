@@ -194,7 +194,7 @@ class CardService extends BaseService
             'writeOffRequest' => $writeOffRequest,
         ];
 
-        return parent::doPost('issue', $params);
+        return parent::doPost('write_off', $params);
     }
 
     /**
