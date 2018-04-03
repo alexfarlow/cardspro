@@ -31,4 +31,11 @@ $r = $cardspro
     ->setSslCert('path://to.srt')
     ->setSslCertPass('12344')
     ->getCardService()
-    ->activate(new PartnerInfo(['partnerCode' => '123']), new CardActivateRequest());
+    ->activate(
+        new PartnerInfo([
+            'partnerCode' => '123'
+        ]),
+        new CardActivateRequest([
+            'some' => 'data'
+        ])
+    );
