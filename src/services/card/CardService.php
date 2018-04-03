@@ -233,7 +233,7 @@ class CardService extends BaseService
             'additionalInfo' => $additionalInfo,
         ];
 
-        return parent::doPost('purchase', $params);
+        return parent::doPost('search', $params);
     }
 
     /**
