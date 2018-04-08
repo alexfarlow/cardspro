@@ -2,11 +2,13 @@
 
 namespace cardspro\services\operation;
 
+use cardspro\common\models\BaseResponse;
 use cardspro\common\models\CancelRequest;
 use cardspro\common\models\ExpandedOperationsRequest;
 use cardspro\common\models\OperationsRequest;
 use cardspro\common\models\PartnerInfo;
 use cardspro\common\models\RefundRequest;
+use cardspro\exceptions\ApiNullException;
 use cardspro\services\BaseService;
 
 class OperationService extends BaseService
@@ -25,7 +27,9 @@ class OperationService extends BaseService
      * @param PartnerInfo   $partnerInfo
      * @param CancelRequest $cancelRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function cancel(PartnerInfo $partnerInfo, CancelRequest $cancelRequest)
     {
@@ -44,7 +48,9 @@ class OperationService extends BaseService
      * @param PartnerInfo       $partnerInfo
      * @param OperationsRequest $operationsRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function info(PartnerInfo $partnerInfo, OperationsRequest $operationsRequest)
     {
@@ -62,7 +68,9 @@ class OperationService extends BaseService
      * @param PartnerInfo               $partnerInfo
      * @param ExpandedOperationsRequest $data
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function infoExpand(PartnerInfo $partnerInfo, ExpandedOperationsRequest $data)
     {
@@ -81,7 +89,9 @@ class OperationService extends BaseService
      * @param PartnerInfo   $partnerInfo
      * @param RefundRequest $refundRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function refund(PartnerInfo $partnerInfo, RefundRequest $refundRequest)
     {

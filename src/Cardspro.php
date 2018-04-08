@@ -1,15 +1,16 @@
 <?php
-
-namespace cardspro\services;
-
+namespace cardspro;
 
 use cardspro\services\card\CardService;
 use cardspro\services\ident\IdentService;
 use cardspro\services\operation\OperationService;
 use cardspro\services\user\UserService;
+use Psr\Log\LoggerAwareTrait;
 
-class CardsproService
+class Cardspro
 {
+    use LoggerAwareTrait;
+
     /**
      * @var string
      */
@@ -24,6 +25,11 @@ class CardsproService
      * @var CardService
      */
     private $cardService;
+
+    /**
+     * @var bool
+     */
+    private $test = false;
 
     /**
      * @var IdentService
@@ -48,8 +54,10 @@ class CardsproService
         if (empty($this->cardService)){
             $this->cardService = new CardService();
             $this->cardService
+                ->setTest($this->test)
                 ->setSslCert($this->sslCert)
-                ->setSslCertPass($this->sslCertPass);
+                ->setSslCertPass($this->sslCertPass)
+                ->setLogger($this->logger);
         }
         return $this->cardService;
     }
@@ -62,8 +70,10 @@ class CardsproService
         if (empty($this->identService)){
             $this->identService = new IdentService();
             $this->identService
+                ->setTest($this->test)
                 ->setSslCert($this->sslCert)
-                ->setSslCertPass($this->sslCertPass);
+                ->setSslCertPass($this->sslCertPass)
+                ->setLogger($this->logger);
         }
 
         return $this->identService;
@@ -77,8 +87,10 @@ class CardsproService
         if (empty($this->operationService)){
             $this->operationService = new OperationService();
             $this->operationService
+                ->setTest($this->test)
                 ->setSslCert($this->sslCert)
-                ->setSslCertPass($this->sslCertPass);
+                ->setSslCertPass($this->sslCertPass)
+                ->setLogger($this->logger);
         }
 
         return $this->operationService;
@@ -92,8 +104,10 @@ class CardsproService
         if (empty($this->userService)){
             $this->userService = new UserService();
             $this->userService
+                ->setTest($this->test)
                 ->setSslCert($this->sslCert)
-                ->setSslCertPass($this->sslCertPass);
+                ->setSslCertPass($this->sslCertPass)
+                ->setLogger($this->logger);
         }
 
         return $this->userService;
@@ -102,7 +116,7 @@ class CardsproService
     /**
      * @param string $sslCert
      *
-     * @return CardsproService
+     * @return Cardspro
      */
     public function setSslCert($sslCert)
     {
@@ -114,7 +128,7 @@ class CardsproService
     /**
      * @param string $sslCertPass
      *
-     * @return CardsproService
+     * @return Cardspro
      */
     public function setSslCertPass($sslCertPass)
     {
@@ -122,4 +136,17 @@ class CardsproService
 
         return $this;
     }
+
+    /**
+     * @param bool $test
+     *
+     * @return Cardspro
+     */
+    public function setTest($test)
+    {
+        $this->test = $test;
+
+        return $this;
+    }
+
 }

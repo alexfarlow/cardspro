@@ -1,6 +1,7 @@
 <?php
 namespace cardspro\services\ident;
 
+use cardspro\common\models\BaseResponse;
 use cardspro\common\models\CardIdentifier;
 use cardspro\common\models\PartnerInfo;
 use cardspro\services\BaseService;
@@ -17,14 +18,16 @@ class IdentService extends BaseService
     /**
      * Отправка SMS c OTP-кодом
      *
-     * @param PartnerInfo    $partnerInfo       Информация о запросе партнёра
-     * @param CardIdentifier $cardIdentifier    Информация о карте (идентификатор карты).
-     * @param string|null    $phone             Номер телефона. Формат: +7ХХХХХХХХХХ.
-     * @param string|null    $operationType     Тип операции [ACTIVATION | WRITE_OFF | PURCHASE ]
-     * @param string|null    $productCode       Код продукта
-     * @param string|null    $additionalInfo    Дополнительные параметры
+     * @param PartnerInfo    $partnerInfo    Информация о запросе партнёра
+     * @param CardIdentifier $cardIdentifier Информация о карте (идентификатор карты).
+     * @param string|null    $phone          Номер телефона. Формат: +7ХХХХХХХХХХ.
+     * @param string|null    $operationType  Тип операции [ACTIVATION | WRITE_OFF | PURCHASE ]
+     * @param string|null    $productCode    Код продукта
+     * @param string|null    $additionalInfo Дополнительные параметры
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws \cardspro\exceptions\ApiNullException
      */
     public function send(
         PartnerInfo $partnerInfo,
@@ -52,12 +55,14 @@ class IdentService extends BaseService
      * Проверка OTP-кода.
      * метод предназначен для проверки OTP-кода, отправленного в SMS на мобильный номер телефона клиента
      *
-     * @param PartnerInfo $partnerInfo      Информация о запросе партнёра
-     * @param string      $phone            Номер телефона. Формат: +7ХХХХХХХХХХ
-     * @param integer     $identCode        Код идентификации (код подтверждения из СМС)
-     * @param string|null $additionalInfo   Дополнительные параметры
+     * @param PartnerInfo $partnerInfo    Информация о запросе партнёра
+     * @param string      $phone          Номер телефона. Формат: +7ХХХХХХХХХХ
+     * @param integer     $identCode      Код идентификации (код подтверждения из СМС)
+     * @param string|null $additionalInfo Дополнительные параметры
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws \cardspro\exceptions\ApiNullException
      */
     public function check(PartnerInfo $partnerInfo, $phone, $identCode, $additionalInfo = null)
     {

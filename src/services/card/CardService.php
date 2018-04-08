@@ -2,11 +2,13 @@
 
 namespace cardspro\services\card;
 
+use cardspro\common\models\BaseResponse;
 use cardspro\common\models\CardIdentifier;
 use cardspro\common\models\CardTopUpRequest;
 use cardspro\common\models\PurchaseRequest;
 use cardspro\common\models\UserForm;
 use cardspro\common\models\WriteOffRequest;
+use cardspro\exceptions\ApiNullException;
 use cardspro\services\BaseService;
 use cardspro\common\models\PartnerInfo;
 use cardspro\common\models\CardActivateRequest;
@@ -31,7 +33,9 @@ class CardService extends BaseService
      * @param PartnerInfo         $partnerInfo
      * @param CardActivateRequest $cardActivateRequest
      *
-     * @return object
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function activate(PartnerInfo $partnerInfo, CardActivateRequest $cardActivateRequest)
     {
@@ -58,7 +62,9 @@ class CardService extends BaseService
      * @param PartnerInfo     $partnerInfo
      * @param PurchaseRequest $purchaseRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function calculateDiscount(PartnerInfo $partnerInfo, PurchaseRequest $purchaseRequest)
     {
@@ -77,7 +83,9 @@ class CardService extends BaseService
      * @param PartnerInfo     $partnerInfo
      * @param PurchaseRequest $purchaseRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function calculateEarning(PartnerInfo $partnerInfo, PurchaseRequest $purchaseRequest)
     {
@@ -95,7 +103,9 @@ class CardService extends BaseService
      * @param PartnerInfo         $partnerInfo
      * @param CardActivateRequest $cardChangeStatusRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function change_status(PartnerInfo $partnerInfo, CardActivateRequest $cardChangeStatusRequest)
     {
@@ -113,7 +123,9 @@ class CardService extends BaseService
      * @param string|null    $additionalInfo
      * @param bool           $withoutMarkedBonuses
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function info(PartnerInfo $partnerInfo, CardIdentifier $cardIdentifier, $additionalInfo = null, $withoutMarkedBonuses = false)
     {
@@ -145,7 +157,9 @@ class CardService extends BaseService
      * @param bool                $offline
      * @param string|null         $additionalInfo
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function issue(
         PartnerInfo $partnerInfo,
@@ -185,7 +199,9 @@ class CardService extends BaseService
      * @param PartnerInfo     $partnerInfo
      * @param WriteOffRequest $writeOffRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function write_off(PartnerInfo $partnerInfo, WriteOffRequest $writeOffRequest)
     {
@@ -203,7 +219,9 @@ class CardService extends BaseService
      * @param PartnerInfo     $partnerInfo
      * @param PurchaseRequest $purchaseRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function purchase(PartnerInfo $partnerInfo, PurchaseRequest $purchaseRequest)
     {
@@ -219,11 +237,13 @@ class CardService extends BaseService
      * Поиск карт.
      * Назначение метода: метод предназначен для поиска карт по номеру телефона клиента (держателя карты).
      *
-     * @param PartnerInfo $partnerInfo      Информация о запросе партнёра
-     * @param UserForm    $userForm         Блок с информацией о клиенте, где указывается номер телефона в формате +7ХХХХХХХХХХ
-     * @param string|null $additionalInfo   Дополнительная информация
+     * @param PartnerInfo $partnerInfo    Информация о запросе партнёра
+     * @param UserForm    $userForm       Блок с информацией о клиенте, где указывается номер телефона в формате +7ХХХХХХХХХХ
+     * @param string|null $additionalInfo Дополнительная информация
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function search(PartnerInfo $partnerInfo, UserForm $userForm, $additionalInfo = null)
     {
@@ -239,10 +259,12 @@ class CardService extends BaseService
     /**
      * Пополнение карты.
      *
-     * @param PartnerInfo      $partnerInfo         Информация о запросе партнёра
-     * @param CardTopUpRequest $cardTopUpRequest    Параметры списания
+     * @param PartnerInfo      $partnerInfo      Информация о запросе партнёра
+     * @param CardTopUpRequest $cardTopUpRequest Параметры списания
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function top_up(PartnerInfo $partnerInfo, CardTopUpRequest $cardTopUpRequest)
     {

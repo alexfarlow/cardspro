@@ -2,13 +2,17 @@
 
 namespace cardspro\services\user;
 
+use cardspro\common\models\BaseResponse;
 use cardspro\common\models\PartnerInfo;
 use cardspro\common\models\RestorePasswordRequest;
 use cardspro\common\models\UpdateUserInfoRequest;
+use cardspro\exceptions\ApiNullException;
 use cardspro\services\BaseService;
 
 class UserService extends BaseService
 {
+    const SERVICE = 'User';
+
     public $Ids;
 
     public $Types;
@@ -19,9 +23,12 @@ class UserService extends BaseService
 
     public $StatusesPayment;
 
+    /**
+     * @return string
+     */
     protected function getName()
     {
-        // TODO: Implement getName() method.
+        return strtolower(self::SERVICE);
     }
 
 
@@ -31,7 +38,9 @@ class UserService extends BaseService
      * @param PartnerInfo           $partnerInfo
      * @param UpdateUserInfoRequest $request
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     public function infoChange(PartnerInfo $partnerInfo, UpdateUserInfoRequest $request)
     {
@@ -49,7 +58,9 @@ class UserService extends BaseService
      * @param PartnerInfo            $partnerInfo
      * @param RestorePasswordRequest $restorePasswordRequest
      *
-     * @return mixed
+     * @return BaseResponse
+     * @throws \JsonMapper_Exception
+     * @throws ApiNullException
      */
     public function passwordRestore(PartnerInfo $partnerInfo, RestorePasswordRequest $restorePasswordRequest)
     {

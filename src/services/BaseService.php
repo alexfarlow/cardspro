@@ -1,13 +1,20 @@
 <?php
-
 namespace cardspro\services;
 
 use cardspro\common\models\BaseResponse;
-use cardspro\exceptions\ApiCurlException;
 use cardspro\exceptions\ApiNullException;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Uri;
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 
 abstract class BaseService
 {
+    use LoggerAwareTrait;
+
     /**
      * @var string
      */
@@ -21,30 +28,35 @@ abstract class BaseService
     /**
      * @var bool
      */
-    public $test = true;
+    public $test = false;
 
     /**
      * @var string
      */
-    private $apiUrl = 'https://api.cardspro.ru/rest';
+    private $apiUrl = 'https://api.cardspro.ru/rest/';
 
     /**
      * @var string
      */
-    private $apiUrlTest = 'https://api-test.cardspro.ru/rest';
-
-    /**
-     * @var resource
-     */
-    private $ch;
+    private $apiUrlTest = 'https://api-test.cardspro.ru/rest/';
 
     /**
      * @var array
      */
     private $http_headers = [
-        'Content-Type: application/json; charset=utf-8',
-        'Accept-Language: ru',
+        'Content-Type' => 'application/json; charset=utf-8',
+        'Accept-Language' => 'ru',
     ];
+
+    /**
+     * @var Request
+     */
+    private $request;
+
+    /**
+     * @var Response
+     */
+    private $response;
 
     /**
      * @return mixed
@@ -56,14 +68,15 @@ abstract class BaseService
      * @param $path
      * @param $params
      *
-     * @return object
-     * @throws ApiCurlException
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
     protected function call($method, $path, $params)
     {
         $path = static::getName().'/'.$path;
 
-        return $this->getResponse($method, $path, $params);
+        return $this->getData($method, $path, $params);
     }
 
     /**
@@ -90,97 +103,111 @@ abstract class BaseService
         return $this;
     }
 
+    /**
+     * @param $test
+     *
+     * @return $this
+     */
     public final function setTest($test)
     {
         $this->test = boolval($test);
 
         return $this;
     }
-    
-    
+
+    /**
+     * @param       $path
+     * @param array $params
+     *
+     * @return object
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
+     */
     protected function doGet($path, array $params)
     {        
         return $this->call('get', $path, $params);
     }
-    
+
+    /**
+     * @param       $path
+     * @param array $params
+     *
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
+     */
     protected function doPost($path, array $params)
     {
         return $this->call('post', $path, $params);
     }
 
     /**
-     * @return resource
+     * @param $method
+     * @param $serviceName
+     * @param $requestData
+     *
+     * @return BaseResponse
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
      */
-    private function getCurl()
+    public function getData($method, $serviceName, $requestData)
     {
+        $requestData = self::array_filter((array)$requestData);
+        $requestData = json_encode($requestData, JSON_UNESCAPED_UNICODE);
+        $requestData = preg_replace('/,\s*"[^"]+":null|"[^"]+":null,?/', '', $requestData);
 
-        if (!$this->ch) {
-            $this->ch = curl_init();
+        $this->request = new Request(
+            $method,
+            new Uri($this->getUrl().$serviceName ),
+            $this->http_headers,
+            $requestData
+        );
 
-            curl_setopt_array(
-                $this->ch,
-                [
-                    CURLOPT_HTTPHEADER     => $this->http_headers,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_POST           => true,
-                    CURLOPT_HEADER         => false,
-                    CURLOPT_SSL_VERIFYPEER => false,
-                    CURLOPT_SSL_VERIFYHOST => false,
-                    CURLOPT_TIMEOUT        => 1200,
-                    CURLOPT_SSLCERT        => $this->sslCert,
+        $client = new Client;
+        $this->response = $client->send($this->request, [
+            'cert' => [
+                $this->sslCert,
+                $this->sslCertPass
+            ],
+            'curl' => [
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false,
+                CURLOPT_SSLCERTTYPE => "P12",
+                CURLOPT_TIMEOUT => 1200,
+            ]
+        ]);
 
-                    CURLOPT_SSLCERTPASSWD => $this->sslCertPass,
-                    CURLOPT_SSLKEYPASSWD  => $this->sslCertPass,
-
-                    CURLOPT_SSLCERTTYPE => "P12",
-                ]
-            );
-        }
-
-        return $this->ch;
+        return $this->parseResponse($this->response);
     }
 
-
-    public function getResponse($method, $serviceName, $request)
+    /**
+     * @param Response $response
+     *
+     * @return BaseResponse|object
+     * @throws ApiNullException
+     * @throws \JsonMapper_Exception
+     */
+    private function parseResponse(Response $response)
     {
-        $curl = $this->getCurl();
+        $responseData = $response->getBody()->getContents();
 
-        $request = self::array_filter((array)$request);
-        $request = json_encode($request, JSON_UNESCAPED_UNICODE);
-
-        curl_setopt_array($curl, [CURLOPT_URL => ($this->test ? $this->apiUrlTest : $this->apiUrl).'/'.$serviceName,]);
-
-        if ($method == 'post'){
-            curl_setopt_array($curl, [CURLOPT_POSTFIELDS => $request,]);
-        }
-
-        if (($response = curl_exec($curl)) !== false) {
-
-            $result = $this->parseResponse($response);
-
-        } else {
-            throw new ApiCurlException(
-                'Curl error: '.curl_error($curl),
-                curl_errno($curl)
-            );
-        }
-
-        return $result;
-    }
-
-    private function parseResponse($response)
-    {
-        $response = preg_replace('/,\s*"[^"]+":null|"[^"]+":null,?/', '', $response);
-        $data = json_decode($response, false, 512, JSON_BIGINT_AS_STRING);
-
-        if (!is_object($data)) {
+        if (empty($responseData)){
+            $this->log(LogLevel::CRITICAL, 'response data is empty', ['responseData' => $responseData]);
             throw new ApiNullException('Данные не получены');
         }
 
+        $responseData = preg_replace('/,\s*"[^"]+":null|"[^"]+":null,?/', '', $responseData);
+        $json = json_decode($responseData, false, 512, JSON_BIGINT_AS_STRING);
+
+        if (!is_object($json)) {
+            $this->log(LogLevel::CRITICAL, 'response data not valid json', $responseData);
+            throw new ApiNullException('Данные не получены');
+        }
+
+        $this->log(LogLevel::INFO, 'response parse done', ['json' => $json]);
         $mapper = new \JsonMapper();
 
-        return $mapper->map($data, new BaseResponse());
+        return $mapper->map($json, new BaseResponse());
     }
 
 
@@ -198,5 +225,42 @@ abstract class BaseService
         }
 
         return $array;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->test ? $this->apiUrlTest : $this->apiUrl;
+    }
+
+    /**
+     * @param           $level
+     * @param string   $message
+     * @param array    $context
+     */
+    public function log($level, $message, array $context = array())
+    {
+        if ($this->logger instanceof LoggerInterface){
+
+            $this->logger->{$level}($message, $context);
+        }
+    }
+
+    /**
+     * @return Request
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @return Response
+     */
+    public function getResponse()
+    {
+        return $this->response;
     }
 }
