@@ -20,6 +20,8 @@
   },
   "require": {
     "php": ">=5.5.0",
-    "netresearch/jsonmapper" : "1.4"
+    "netresearch/jsonmapper" : "1.4",
+    "guzzlehttp/guzzle": "^6.3",
+    "psr/log": "^1.0"
   }
 }
