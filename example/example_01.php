@@ -11,10 +11,13 @@ try{
 
     $cardspro = new Cardspro();
 
-    $CardService = $cardspro
+    $cardspro
+        //->setLogger(new Logger())
         ->setSslCert('path://to.srt')
-        ->setSslCertPass('12344')
-        ->getCardService();
+        ->setSslCertPass('12344');
+
+    // if need CardService instance
+    $CardService = $cardspro->getCardService();
 
     //BaseResponse
     $baseResponse = $CardService->info(
