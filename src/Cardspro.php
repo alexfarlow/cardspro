@@ -149,4 +149,11 @@ class Cardspro
         return $this;
     }
 
+    /**
+     * @param LoggerInterface|null $logger
+     */
+    public function setLogger(LoggerInterface $logger = null)
+    {
+        $this->logger = $logger;
+    }
 }
