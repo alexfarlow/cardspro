@@ -100,6 +100,6 @@ class OperationService extends BaseService
             'refundRequest' => $refundRequest
         ];
 
-        return parent::doPost('cancel', $params);
+        return parent::doPost('refund', $params);
     }
 }
