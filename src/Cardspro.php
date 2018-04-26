@@ -22,6 +22,11 @@ class Cardspro
     private $sslCertPass;
 
     /**
+     * @var string
+     */
+    private $sslCertType = "P12";
+
+    /**
      * @var CardService
      */
     private $cardService;
@@ -57,6 +62,7 @@ class Cardspro
                 ->setTest($this->test)
                 ->setSslCert($this->sslCert)
                 ->setSslCertPass($this->sslCertPass)
+                ->setSslCertType($this->sslCertType)
                 ->setLogger($this->logger);
         }
         return $this->cardService;
@@ -73,6 +79,7 @@ class Cardspro
                 ->setTest($this->test)
                 ->setSslCert($this->sslCert)
                 ->setSslCertPass($this->sslCertPass)
+                ->setSslCertType($this->sslCertType)
                 ->setLogger($this->logger);
         }
 
@@ -90,6 +97,7 @@ class Cardspro
                 ->setTest($this->test)
                 ->setSslCert($this->sslCert)
                 ->setSslCertPass($this->sslCertPass)
+                ->setSslCertType($this->sslCertType)
                 ->setLogger($this->logger);
         }
 
@@ -107,6 +115,7 @@ class Cardspro
                 ->setTest($this->test)
                 ->setSslCert($this->sslCert)
                 ->setSslCertPass($this->sslCertPass)
+                ->setSslCertType($this->sslCertType)
                 ->setLogger($this->logger);
         }
 
@@ -133,6 +142,18 @@ class Cardspro
     public function setSslCertPass($sslCertPass)
     {
         $this->sslCertPass = $sslCertPass;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sslCertType
+     *
+     * @return Cardspro
+     */
+    public function setSslCertType($sslCertType)
+    {
+        $this->sslCertType = $sslCertType;
 
         return $this;
     }

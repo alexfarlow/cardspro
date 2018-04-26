@@ -26,6 +26,11 @@ abstract class BaseService
     private $sslCertPass;
 
     /**
+     * @var string
+     */
+    private $sslCertType = "P12";
+
+    /**
      * @var bool
      */
     public $test = false;
@@ -104,6 +109,18 @@ abstract class BaseService
     }
 
     /**
+     * @param $sslCertType
+     *
+     * @return $this
+     */
+    public final function setSslCertType($sslCertType)
+    {
+        $this->sslCertType = $sslCertType;
+
+        return $this;
+    }
+
+    /**
      * @param $test
      *
      * @return $this
@@ -172,7 +189,7 @@ abstract class BaseService
             'curl' => [
                 CURLOPT_SSL_VERIFYPEER => false,
                 CURLOPT_SSL_VERIFYHOST => false,
-                CURLOPT_SSLCERTTYPE => "P12",
+                CURLOPT_SSLCERTTYPE => $this->sslCertType,
                 CURLOPT_TIMEOUT => 1200,
             ]
         ]);
